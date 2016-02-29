@@ -8,6 +8,7 @@ public class Tweet {
     private int id;
     private String person;
     private String TweetMessage;
+    private String mymessage;
 
     public String getPerson() {
         return person;
