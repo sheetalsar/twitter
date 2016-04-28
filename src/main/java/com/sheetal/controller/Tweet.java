@@ -1,8 +1,5 @@
 package com.sheetal.controller;
 
-/**
- * Created by sheetalsarogi on 8/31/15.
- */
 
 public class Tweet {
     private int id;

@@ -2,15 +2,23 @@ package com.sheetal.controller;
 /**
  * Created by sheetalsarogi on 8/31/15.
  */
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import java.util.List;
+
 @Controller
 public class TweetsController {
 
     @RequestMapping("/view")
-    public @ResponseBody List<Tweet> getPerson(){
+    public
+    @ResponseBody
+    List<Tweet> getPerson() {
         //Get the Spring Context
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("/beanconfig.xml");
         //Get the EmployeeDAO Bean
@@ -18,8 +26,11 @@ public class TweetsController {
         List<Tweet> twList = tweetDAO.getAll();
         return twList;
     }
-    @RequestMapping(value="/idinfo/{id}", method= RequestMethod.GET)
-    public @ResponseBody Tweet getById(@PathVariable int id){
+
+    @RequestMapping(value = "/idinfo/{id}", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    Tweet getById(@PathVariable int id) {
         //Get the Spring Context
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("/beanconfig.xml");
         //Get the EmployeeDAO Bean
