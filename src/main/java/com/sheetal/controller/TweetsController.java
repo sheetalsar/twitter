@@ -26,6 +26,7 @@ public class TweetsController {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("/beanconfig.xml");
         //Get the EmployeeDAO Bean
         TweetDAO tweetDAO = ctx.getBean("TweetDAO", TweetDAO.class);
+
         List<Tweet> twList = tweetDAO.getAll();
         return twList;
 
