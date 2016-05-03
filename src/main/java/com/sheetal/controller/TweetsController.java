@@ -38,7 +38,6 @@ public class TweetsController {
         //Get the Spring Context
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("/beanconfig.xml");
         //Get the EmployeeDAO Bean
-        
         TweetDAO tweetDAO = ctx.getBean("TweetDAO", TweetDAO.class);
         Tweet tw = tweetDAO.getById(id);
         return tw;
