@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import com.bugsnag.Client;
 
 import java.util.List;
 
@@ -19,12 +20,15 @@ public class TweetsController {
     public
     @ResponseBody
     List<Tweet> getPerson() {
+        Client bugsnag = new Client("a2ff9af328186ca863ceeb96fdf659f2");
+        bugsnag.notify(new RuntimeException("Non-fatal"));
         //Get the Spring Context
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("/beanconfig.xml");
         //Get the EmployeeDAO Bean
         TweetDAO tweetDAO = ctx.getBean("TweetDAO", TweetDAO.class);
         List<Tweet> twList = tweetDAO.getAll();
         return twList;
+
     }
 
     @RequestMapping(value = "/idinfo/{id}", method = RequestMethod.GET)
