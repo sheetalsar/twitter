@@ -22,7 +22,7 @@ public class TweetsController {
     @ResponseBody
     List<Tweet> getPerson() {
         Client bugsnag = new Client("a2ff9af328186ca863ceeb96fdf659f2");
-        bugsnag.notify(new ArithmeticException("Non-fatal-34"));
+        bugsnag.notify(new ArithmeticException("Non-fatal-341"));
         //Get the Spring Context
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("/beanconfig.xml");
         //Get the EmployeeDAO Bean
