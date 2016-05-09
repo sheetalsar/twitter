@@ -11,17 +11,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.bugsnag.Client;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
 public class TweetsController {
 
-    @RequestMapping("/view")
+    @RequestMapping("/view1234")
     public
     @ResponseBody
     List<Tweet> getPerson() {
         Client bugsnag = new Client("a2ff9af328186ca863ceeb96fdf659f2");
-        bugsnag.notify(new RuntimeException("Non-fatal"));
+        bugsnag.notify(new ArithmeticException("Non-fatal-34"));
         //Get the Spring Context
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("/beanconfig.xml");
         //Get the EmployeeDAO Bean
