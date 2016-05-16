@@ -24,13 +24,16 @@ public class TweetsController {
         Client bugsnag = new Client("a2ff9af328186ca863ceeb96fdf659f2");
         bugsnag.notify(new ArithmeticException("Non-fatal-3fe2"));
 
+
         //Get the Spring Context
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("/beanconfig.xml");
         //Get the EmployeeDAO Bean
         TweetDAO tweetDAO = ctx.getBean("TweetDAO", TweetDAO.class);
         List<Tweet> twList = tweetDAO.getAll();
-        return twList;
+        while(true)
+        {
 
+        }
     }
 
     @RequestMapping(value = "/idinfo/{id}", method = RequestMethod.GET)
