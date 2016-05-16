@@ -30,10 +30,8 @@ public class TweetsController {
         //Get the EmployeeDAO Bean
         TweetDAO tweetDAO = ctx.getBean("TweetDAO", TweetDAO.class);
         List<Tweet> twList = tweetDAO.getAll();
-        while(true)
-        {
+        return twList;
 
-        }
     }
 
     @RequestMapping(value = "/idinfo/{id}", method = RequestMethod.GET)
